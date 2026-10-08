@@ -1,111 +1,37 @@
-# Reponses — Mission 5
+# Reponses
 
-**1. Identifiant court du premier commit :**
+## Mission 5
 
-`dae5040` — "Creation de la page d'accueil NovaTech"
+1. Premier commit : dae5040
+2. Commits Contact : 9a3358b et e011024
+3. Nombre de commits : voir git log
+4. Commande graphique : git log --oneline --graph --all
+5. Examiner un commit : git show 9a3358b
 
-**2. Commit de l'ajout de la page Contact :**
+## Mission 6
 
-Deux commits (developpes sur la branche `feature/contact`) :
-- `9a3358b` : "Ajout de la page Contact avec nom, e-mail et bouton d'envoi"
-- `e011024` : "Ajout des champs sujet et message au formulaire de contact"
-
-**3. Nombre actuel de commits :**
-
-8 commits.
-
-**4. Commande pour afficher l'historique sous forme graphique :**
-
-```bash
-git log --oneline --graph --all
-```
-
-**5. Commande pour examiner un commit Contact :**
-
-```bash
-git show 9a3358b
-```
-
-Ce commit ajoute le fichier `contact.html` (46 lignes) : debut du formulaire
-avec Nom, E-mail et bouton Envoyer.
-
-## Partie 4 - Mission 6 : mauvais message de commit
-
-Commande utilisee :
-
-```bash
 git commit --amend -m "Ajout du copyright dans le pied de page"
-```
+amend remplace le dernier commit donc il n'y en a qu'un
 
-amend remplace le dernier commit par un nouveau : il n'y a bien qu'un seul
-commit pour cette modification.
+## Mission 7
 
-## Partie 4 - Mission 7 : modification a abandonner
-
-Commande utilisee :
-
-```bash
 git restore index.html
-```
+le fichier revient comme au dernier commit
 
-Le fichier est revenu exactement a l'etat du dernier commit.
+## Mission 8
 
-## Partie 5 - Mission 8 : commit local incorrect
-
-Commande choisie :
-
-```bash
 git reset --soft HEAD~1
-```
+les modifs restent car soft touche pas au fichier
+git reset --hard HEAD~1 aurait tout supprime
 
-Pourquoi les modifications sont toujours presentes : `--soft` annule
-seulement le commit, il remet les modifications dans la zone de staging.
-Le fichier de travail n'est pas touche.
+## Mission 9
 
-Methode qui aurait aussi supprime les modifications du fichier :
-
-```bash
-git reset --hard HEAD~1
-```
-
-`--hard` efface le commit ET les modifications dans le fichier.
-
-## Partie 5 - Mission 9 : commit partage a annuler
-
-Commande utilisee :
-
-```bash
 git revert 0d58321
-```
+cree un nouveau commit qui annule
+different de la mission 8 car le commit etait deja partage donc on y touche pas
 
-Historique apres :
+## Mission 11
 
-```
-78657d3 Revert "Ajout promotion"
-0d58321 Ajout promotion
-```
-
-Pourquoi c'est different de la mission 8 : ici le commit etait deja partage
-avec l'equipe. On ne peut pas le supprimer ni le reecrire (reset ou amend),
-car les autres l'ont deja dans leur historique. `revert` cree un NOUVEAU
-commit qui fait l'inverse : l'historique reste intact et tout le monde le
-voit pareil.
-
-## Partie 7 - Mission 11 : correction isolee
-
-Branche de tests : `branche-tests` avec 3 commits :
-1. `cf94647` couleurs experimentales (pas recupere)
-2. `1122aab` modification du titre (recupere)
-3. `6b5eb24` texte de test dans le footer (pas recupere)
-
-Commande utilisee (depuis main) :
-
-```bash
 git cherry-pick 1122aab
-```
-
-Identifiant du commit recupere : `1122aab` (recopie sur main en `d308a54`).
-
-Pourquoi pas une fusion classique : un merge de branche-tests aurait pris
-les 3 commits, donc aussi les couleurs experimentales et le texte de test.
-cherry-pick prend juste le commit utile.
+id recupere : 1122aab
+un merge aurait pris les 3 commits donc pas adapté
