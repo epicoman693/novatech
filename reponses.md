@@ -95,7 +95,7 @@ voit pareil.
 
 Branche de tests : `branche-tests` avec 3 commits :
 1. `cf94647` couleurs experimentales (pas recupere)
-2. `1122aab` correction de la faute dans le titre (recupere)
+2. `1122aab` modification du titre (recupere)
 3. `6b5eb24` texte de test dans le footer (pas recupere)
 
 Commande utilisee (depuis main) :
