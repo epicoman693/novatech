@@ -1,0 +1,14 @@
+body{
+    background: red;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.head{
+    padding: 20px;
+    background-color: black;
+
+}
+h1{
+    text-align: center;
+}
