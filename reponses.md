@@ -90,3 +90,22 @@ avec l'equipe. On ne peut pas le supprimer ni le reecrire (reset ou amend),
 car les autres l'ont deja dans leur historique. `revert` cree un NOUVEAU
 commit qui fait l'inverse : l'historique reste intact et tout le monde le
 voit pareil.
+
+## Partie 7 - Mission 11 : correction isolee
+
+Branche de tests : `branche-tests` avec 3 commits :
+1. `cf94647` couleurs experimentales (pas recupere)
+2. `1122aab` correction de la faute dans le titre (recupere)
+3. `6b5eb24` texte de test dans le footer (pas recupere)
+
+Commande utilisee (depuis main) :
+
+```bash
+git cherry-pick 1122aab
+```
+
+Identifiant du commit recupere : `1122aab` (recopie sur main en `d308a54`).
+
+Pourquoi pas une fusion classique : un merge de branche-tests aurait pris
+les 3 commits, donc aussi les couleurs experimentales et le texte de test.
+cherry-pick prend juste le commit utile.
