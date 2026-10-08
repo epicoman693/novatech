@@ -47,3 +47,28 @@ version suivante pour
 correction de bug mineur : 1.0.1
 nouvelle fonctionnalite compatible : 1.1.0
 refonte majeure incompatible : 2.0.0
+
+## Questions finales
+
+1. la zone de travail c est mes fichiers modifies
+   le staging c est ce que je vais mettre dans le prochain commit
+   l historique c est tous les commits enregistres
+
+2. parce que on ne casse pas la branche principale et on peut tester separement
+
+3. mission 8 reset annule le commit localement et reecrit l historique
+   mission 9 revert cree un nouveau commit et garde l historique intact
+
+4. quand une urgence arrive pendant un travail pas fini (mission 10)
+
+5. parce qu on prend juste le commit utile sans prendre les autres
+
+6. HEAD montre la ou on est dans l historique
+
+7. HEAD~2 c est le commit deux rangs avant
+
+8. un tag donne un nom a une version precis du projet
+
+9. parce qu ils sont plus faciles a comprendre corriger et annuler
+
+10. parce que ce sont des fichiers temporaires ou secrets logs mots de passe
